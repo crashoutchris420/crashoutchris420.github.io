@@ -1,9 +1,3 @@
-<!--
-  Name: Christopher Notidis
-  Date: 28th February 2025
-  Description: Homepage about J. Cole with an introduction, images, and hyperlinks.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,8 +38,10 @@
     </ol>
 
     <h3>Image Gallery</h3>
-    <img src="cole1.jpg" alt="J. Cole performing live">
-    <img src="cole2.jpg" alt="J. Cole photo shoot">
+    <div class="image-gallery">
+      <img src="cole1.jpg" alt="J. Cole performing live">
+      <img src="cole2.jpg" alt="J. Cole photo shoot">
+    </div>
 
     <h3>More Information</h3>
     <p>For more information on J. Cole, visit his official <a href="https://www.jcolemusic.com" target="_blank">website</a>.</p>
@@ -56,90 +52,16 @@
   </footer>
 </body>
 </html>
-
-<!--
-  Name: Your Name
-  Date: 28th February 2025
-  Description: Biography page about J. Cole's early life and career.
--->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>J. Cole - Biography</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>J. Cole - Biography</h1>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="index.htm">Home</a></li>
-      <li><a href="biography.htm">Biography</a></li>
-    </ul>
-  </nav>
-
-  <section>
-    <h2>Early Life</h2>
-    <p>Born on January 28, 1985, in Frankfurt, Germany, J. Cole was raised in Fayetteville, North Carolina. He began rapping at age 12, and by the time he was 15, he had already started recording his own music.</p>
-
-    <h2>Career Beginnings</h2>
-    <p>J. Cole signed to Roc Nation in 2009, becoming the first artist to sign with Jay-Z's label. His debut album, *Cole World: The Sideline Story*, reached number one on the US Billboard 200 chart.</p>
-
-    <h2>Discography</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Year</th>
-          <th>Album Title</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2011</td>
-          <td>Cole World: The Sideline Story</td>
-        </tr>
-        <tr>
-          <td>2013</td>
-          <td>Born Sinner</td>
-        </tr>
-        <tr>
-          <td>2014</td>
-          <td>2014 Forest Hills Drive</td>
-        </tr>
-        <tr>
-          <td>2016</td>
-          <td>4 Your Eyez Only</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 J. Cole Fan Page</p>
-  </footer>
-</body>
-</html>
-
-/* 
-  Name: Your Name
-  Date: 28th February 2025
-  Description: External stylesheet for J. Cole Fan Page.
-*/
-
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #f0f0f0; /* Lighter background for better readability */
   color: #333;
 }
 
 header {
-  background-color: #2c3e50;
+  background-color: #2c3e50; /* Dark blue for header */
   color: white;
   padding: 20px;
   text-align: center;
@@ -150,7 +72,7 @@ h1, h2, h3 {
 }
 
 nav {
-  background-color: #34495e;
+  background-color: #34495e; /* Lighter blue for navigation */
   padding: 10px;
 }
 
@@ -168,6 +90,12 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #2980b9; /* Hover effect */
+  border-radius: 5px;
 }
 
 section {
@@ -181,15 +109,28 @@ ul, ol {
   margin: 10px 0;
 }
 
+h2, h3 {
+  color: #2c3e50; /* Dark blue text for sub-headings */
+}
+
+.image-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 img {
-  width: 100%;
+  max-width: 48%;
   height: auto;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 table, th, td {
@@ -209,10 +150,24 @@ th {
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #34495e;
+  background-color: #34495e; /* Same as navigation bar */
   color: white;
   margin-top: 20px;
 }
 
+footer p {
+  font-size: 14px;
+}
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .image-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
 
